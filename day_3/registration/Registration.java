@@ -1,5 +1,4 @@
-
-
+package java_work.day_3.registration;
 import java.util.Scanner;
 
 public class Registration {

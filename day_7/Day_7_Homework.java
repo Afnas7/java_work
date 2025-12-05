@@ -25,12 +25,19 @@ public class Day_7_Homework {
 		}
 		System.out.println("enter the quantity (in units) they want for each item");
 		Scanner in=new Scanner(System.in);
-		int i=0;
-		for(String item : Items) {
-			System.out.println("Quantity of "+ item+"items");
-			quant[i]=in.nextInt();
-			i++;
+		
+		try {
+			int i=0;
+			for(String item : Items) {
+				System.out.println("Quantity of "+ item+"items");
+				quant[i]=in.nextInt();
+				i++;
+			}
+		}catch(Exception e){
+			 System.out.println("❌ Invalid Input! Please enter only numbers.");
+	            return; // stop the program
 		}
+		
 		System.out.println("total cost"+cost(Price,quant));
 		LocalDateTime curr= LocalDateTime.now();
 		DateTimeFormatter fort = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
@@ -45,7 +52,7 @@ public class Day_7_Homework {
 		if (total>500) {
 			dis=(total*0.10);
 			total=total-dis;
-			System.out.println("discount appled"+dis);
+			System.out.println("discount appled :"+dis);
 			return total;
 			
 		}
